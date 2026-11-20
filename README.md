@@ -4,6 +4,8 @@
 
 > This is a **vibe-coded** project built with OpenAI Codex and iterated against a real Hantek 6022BE.
 
+[Download the latest Windows x64 release](https://github.com/9PK4U/wavebench-6022/releases/latest)
+
 ![WaveBench 6022 in English demo mode, with CH1 and CH2 on separate tracks](docs/wavebench-demo.png)
 
 ## Features
@@ -17,7 +19,7 @@
 
 ## Get started
 
-1. Run `WaveBench6022.exe` from the self-contained Windows x64 build. See [Build from source](#build-from-source).
+1. Download the Windows x64 ZIP from [Releases](https://github.com/9PK4U/wavebench-6022/releases/latest), extract it, and run `WaveBench6022.exe`. You can also [build it from source](#build-from-source).
 2. Connect the Hantek 6022BE. WaveBench starts capturing when it sees the device, and opens **Demo** when it cannot find it. The source selector also lets you choose either mode.
 3. Select **Autoset** to pick the signal channel, set the trigger level, and fit several periods when the frequency can be measured.
 

@@ -10,6 +10,7 @@
     <AssemblyName>WaveBench6022</AssemblyName>
     <RootNamespace>ScopeDesk</RootNamespace>
     <Product>WaveBench 6022</Product>
+    <Version>0.1.0</Version>
     <Description>Oscilloscope for the Hantek 6022BE</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
     <ApplicationIcon>ScopeDesk.ico</ApplicationIcon>
