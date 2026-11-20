@@ -1,0 +1,232 @@
+<Window x:Class="ScopeDesk.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ScopeDesk"
+        Title="{DynamicResource AppTitle}" Icon="ScopeDesk.ico" Width="1240" Height="790" MinWidth="980" MinHeight="690"
+        WindowStartupLocation="CenterScreen" Background="#0A101B" Foreground="#EEF4FF"
+        FontFamily="Segoe UI Variable Text, Segoe UI" FontSize="13" UseLayoutRounding="True"
+        Loaded="WindowLoaded" Closing="WindowClosing" PreviewKeyDown="WindowKeyDown">
+
+    <Grid Margin="23,17,23,13">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Margin="0,0,0,17">
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                <Button x:Name="AutoSetupButton" Content="{DynamicResource AutoSetup}" Click="AutoSetupClick" Margin="0,0,9,0"
+                        ToolTip="{DynamicResource AutoSetupHint}"/>
+                <Border CornerRadius="20" Background="#132433" BorderBrush="#264158" BorderThickness="1"
+                        Padding="11,7" Margin="0,0,13,0" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse x:Name="StatusDot" Height="7" Width="7" Fill="{StaticResource Muted}" Margin="0,0,7,0"/>
+                        <TextBlock x:Name="StatusText" Text="{DynamicResource Ready}" FontSize="12" FontWeight="SemiBold"/>
+                    </StackPanel>
+                </Border>
+                <ComboBox x:Name="SourceSelect" Width="151" Margin="0,0,9,0" SelectionChanged="SourceChanged"
+                          AutomationProperties.Name="{DynamicResource SignalSource}">
+                    <ComboBoxItem Content="Hantek 6022BE"/>
+                    <ComboBoxItem Content="{DynamicResource Demo}"/>
+                </ComboBox>
+                <Button x:Name="RunButton" Content="{DynamicResource Run}" Click="RunClick" Style="{StaticResource Primary}"
+                        ToolTip="{DynamicResource RunPauseHint}"/>
+                <ComboBox x:Name="LanguageSelect" Width="64" Margin="9,0,0,0" SelectionChanged="LanguageChanged"
+                          AutomationProperties.Name="{DynamicResource Language}" ToolTip="{DynamicResource Language}">
+                    <ComboBoxItem Content="EN"/>
+                    <ComboBoxItem Content="RU"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Border Width="47" Height="47" Background="#142D43" BorderBrush="#2B4F68" BorderThickness="1" CornerRadius="11">
+                    <Path Data="M 0 10 L 6 10 L 10 3 L 15 17 L 20 7 L 24 10 L 31 10"
+                          Width="29" Height="17" Stretch="Fill" Stroke="{StaticResource Cyan}" StrokeThickness="2"
+                          StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"/>
+                </Border>
+                <StackPanel Margin="12,0,0,1" VerticalAlignment="Center">
+                    <TextBlock Text="WaveBench 6022" FontSize="29" FontWeight="SemiBold" LineHeight="32" LineStackingStrategy="BlockLineHeight"/>
+                    <TextBlock Text="{DynamicResource DeviceSubtitle}" Style="{StaticResource Caption}" Margin="1,1,0,0"/>
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="262"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="12"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Style="{StaticResource Panel}" Padding="13,12,13,13">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <DockPanel Margin="4,0,4,11">
+                            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                                <Button x:Name="RecentButton" Content="{DynamicResource SaveRecent}" Click="RecentClick" MinHeight="29"
+                                        Padding="10,0" ToolTip="{DynamicResource SaveRecentHint}" Margin="0,0,6,0"/>
+                                <Button x:Name="RecordButton" Content="{DynamicResource Record}" Click="RecordClick" MinHeight="29" Padding="11,0"
+                                        ToolTip="{DynamicResource RecordHint}" Margin="0,0,6,0"/>
+                                <Button x:Name="OpenRecordingButton" Content="{DynamicResource OpenRecording}" Click="OpenRecordingClick" MinHeight="29"
+                                        Padding="11,0" Margin="0,0,6,0"/>
+                                <Button x:Name="SaveCsv" Content="CSV" Click="SaveCsvClick" MinHeight="29" Padding="11,0"
+                                        ToolTip="{DynamicResource CsvHint}" IsEnabled="False" Margin="0,0,6,0"/>
+                                <Button x:Name="SavePng" Content="PNG" Click="SavePngClick" MinHeight="29" Padding="11,0"
+                                        ToolTip="{DynamicResource PngHint}" IsEnabled="False"/>
+                            </StackPanel>
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Text="{DynamicResource Waveforms}" FontWeight="SemiBold" FontSize="17"/>
+                                <TextBlock x:Name="GridScale" FontFamily="Consolas" FontSize="12" Foreground="{StaticResource Muted}"
+                                           TextTrimming="CharacterEllipsis"/>
+                            </StackPanel>
+                        </DockPanel>
+                        <Grid Grid.Row="1">
+                            <local:Waveform x:Name="Plot" MouseWheel="PlotWheel"
+                                            AutomationProperties.Name="{DynamicResource WaveformsHint}"/>
+                            <Border x:Name="PlotMessage" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                    IsHitTestVisible="False" Background="#EC152236" BorderBrush="#344963" BorderThickness="1"
+                                    Padding="22,13" CornerRadius="10" MaxWidth="460">
+                                <TextBlock x:Name="PlotMessageText" Text="{DynamicResource WaitingSamples}" TextWrapping="Wrap" TextAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <UniformGrid Grid.Row="2" Columns="2">
+                    <Border Style="{StaticResource Panel}" Padding="14,10,10,12" Margin="0,0,6,0">
+                        <StackPanel x:Name="FirstMeasurements">
+                            <DockPanel Margin="0,0,0,8">
+                                <TextBlock x:Name="FirstClipped" DockPanel.Dock="Right" Text="{DynamicResource AdcClipping}"
+                                           Foreground="{StaticResource Amber}" FontSize="11" Visibility="Collapsed"/>
+                                <TextBlock Text="●  CH1" Foreground="{StaticResource Cyan}" FontWeight="SemiBold"/>
+                            </DockPanel>
+                            <UniformGrid Columns="3">
+                                <StackPanel><TextBlock Text="{DynamicResource PeakToPeak}" Style="{StaticResource Caption}"/><TextBlock x:Name="FirstPp" Text="—" FontSize="17" FontWeight="SemiBold"/></StackPanel>
+                                <StackPanel><TextBlock Text="RMS" Style="{StaticResource Caption}"/><TextBlock x:Name="FirstRms" Text="—" FontSize="17" FontWeight="SemiBold"/></StackPanel>
+                                <StackPanel><TextBlock Text="{DynamicResource Frequency}" Style="{StaticResource Caption}"/><TextBlock x:Name="FirstHz" Text="—" FontSize="17" FontWeight="SemiBold"/></StackPanel>
+                            </UniformGrid>
+                            <local:ExtremaTable x:Name="FirstExtrema" Margin="0,8,0,0"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Style="{StaticResource Panel}" Padding="14,10,10,12" Margin="6,0,0,0">
+                        <StackPanel x:Name="SecondMeasurements">
+                            <DockPanel Margin="0,0,0,8">
+                                <TextBlock x:Name="SecondClipped" DockPanel.Dock="Right" Text="{DynamicResource AdcClipping}"
+                                           Foreground="{StaticResource Amber}" FontSize="11" Visibility="Collapsed"/>
+                                <TextBlock Text="●  CH2" Foreground="{StaticResource Amber}" FontWeight="SemiBold"/>
+                            </DockPanel>
+                            <UniformGrid Columns="3">
+                                <StackPanel><TextBlock Text="{DynamicResource PeakToPeak}" Style="{StaticResource Caption}"/><TextBlock x:Name="SecondPp" Text="—" FontSize="17" FontWeight="SemiBold"/></StackPanel>
+                                <StackPanel><TextBlock Text="RMS" Style="{StaticResource Caption}"/><TextBlock x:Name="SecondRms" Text="—" FontSize="17" FontWeight="SemiBold"/></StackPanel>
+                                <StackPanel><TextBlock Text="{DynamicResource Frequency}" Style="{StaticResource Caption}"/><TextBlock x:Name="SecondHz" Text="—" FontSize="17" FontWeight="SemiBold"/></StackPanel>
+                            </UniformGrid>
+                            <local:ExtremaTable x:Name="SecondExtrema" Margin="0,8,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </UniformGrid>
+            </Grid>
+
+            <Border Grid.Column="2" Style="{StaticResource Panel}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="15,15">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource Timebase}" Style="{StaticResource Section}" Margin="0,0,0,9"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="8"/>
+                                <ColumnDefinition Width="74"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="{DynamicResource TimePerDivision}" Style="{StaticResource Caption}" Margin="0,0,0,4"/>
+                                <ComboBox x:Name="TimeSelect" SelectionChanged="AcquisitionChanged" AutomationProperties.Name="{DynamicResource TimePerDivision}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="{DynamicResource Divisions}" Style="{StaticResource Caption}" Margin="0,0,0,4"/>
+                                <ComboBox x:Name="DivisionSelect" SelectionChanged="AcquisitionChanged"
+                                          AutomationProperties.Name="{DynamicResource HorizontalDivisions}"
+                                          ToolTip="{DynamicResource HorizontalDivisionsHint}"/>
+                            </StackPanel>
+                        </Grid>
+                        <TextBlock Text="{DynamicResource SampleRate}" Style="{StaticResource Caption}" Margin="0,9,0,4"/>
+                        <ComboBox x:Name="RateSelect" SelectionChanged="AcquisitionChanged" AutomationProperties.Name="{DynamicResource SampleRate}"/>
+
+                        <Border BorderThickness="0,1,0,0" BorderBrush="{StaticResource Edge}" Margin="0,14,0,12"/>
+                        <DockPanel Margin="0,0,0,9">
+                            <CheckBox x:Name="SplitChannels" Content="{DynamicResource Tracks}" DockPanel.Dock="Right" Width="94"
+                                      Foreground="{StaticResource Cyan}" VerticalAlignment="Center" Checked="DisplayChanged"
+                                      Unchecked="DisplayChanged" ToolTip="{DynamicResource TracksHint}"/>
+                            <TextBlock Text="{DynamicResource Channels}" Style="{StaticResource Section}"/>
+                        </DockPanel>
+                        <Border Background="#0C1725" CornerRadius="9" Padding="9,7,9,8" Margin="0,0,0,7">
+                            <StackPanel>
+                                <CheckBox x:Name="FirstSwitch" Content="CH1" Foreground="{StaticResource Cyan}" IsChecked="True"
+                                          Checked="DisplayChanged" Unchecked="DisplayChanged" ToolTip="{DynamicResource FirstChannelHint}"/>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="7"/><ColumnDefinition Width="61"/></Grid.ColumnDefinitions>
+                                    <ComboBox x:Name="FirstScale" SelectionChanged="AcquisitionChanged" AutomationProperties.Name="{DynamicResource FirstScale}"/>
+                                    <ComboBox Grid.Column="2" x:Name="FirstProbe" SelectionChanged="DisplayChanged" AutomationProperties.Name="{DynamicResource FirstProbe}">
+                                        <ComboBoxItem Content="×1"/><ComboBoxItem Content="×10"/>
+                                    </ComboBox>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                        <Border Background="#0C1725" CornerRadius="9" Padding="9,7,9,8">
+                            <StackPanel>
+                                <CheckBox x:Name="SecondSwitch" Content="CH2" Foreground="{StaticResource Amber}" IsChecked="True"
+                                          Checked="DisplayChanged" Unchecked="DisplayChanged" ToolTip="{DynamicResource SecondChannelHint}"/>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="7"/><ColumnDefinition Width="61"/></Grid.ColumnDefinitions>
+                                    <ComboBox x:Name="SecondScale" SelectionChanged="AcquisitionChanged" AutomationProperties.Name="{DynamicResource SecondScale}"/>
+                                    <ComboBox Grid.Column="2" x:Name="SecondProbe" SelectionChanged="DisplayChanged" AutomationProperties.Name="{DynamicResource SecondProbe}">
+                                        <ComboBoxItem Content="×1"/><ComboBoxItem Content="×10"/>
+                                    </ComboBox>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+
+                        <Border BorderThickness="0,1,0,0" BorderBrush="{StaticResource Edge}" Margin="0,14,0,12"/>
+                        <DockPanel Margin="0,0,0,9">
+                            <TextBlock x:Name="TriggerStatus" DockPanel.Dock="Right" Style="{StaticResource Caption}"
+                                       VerticalAlignment="Center" TextAlignment="Right"/>
+                            <TextBlock Text="{DynamicResource Trigger}" Style="{StaticResource Section}"/>
+                        </DockPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="7"/><ColumnDefinition Width="67"/></Grid.ColumnDefinitions>
+                            <ComboBox x:Name="EdgeSelect" SelectionChanged="DisplayChanged" AutomationProperties.Name="{DynamicResource TriggerEdge}">
+                                <ComboBoxItem Content="{DynamicResource Rising}"/><ComboBoxItem Content="{DynamicResource Falling}"/><ComboBoxItem Content="{DynamicResource Off}"/>
+                            </ComboBox>
+                            <ComboBox x:Name="TriggerSelect" Grid.Column="2" SelectionChanged="DisplayChanged" AutomationProperties.Name="{DynamicResource TriggerChannel}">
+                                <ComboBoxItem Content="CH1"/><ComboBoxItem Content="CH2"/>
+                            </ComboBox>
+                        </Grid>
+                        <DockPanel Margin="0,10,0,4">
+                            <TextBlock x:Name="TriggerLevelText" DockPanel.Dock="Right" FontFamily="Consolas" TextAlignment="Right"/>
+                            <TextBlock Text="{DynamicResource Level}" Style="{StaticResource Caption}"/>
+                        </DockPanel>
+                        <Slider x:Name="Level" Minimum="-4" Maximum="4" Value="0" SmallChange=".01" LargeChange=".25"
+                                ValueChanged="DisplayChanged" AutomationProperties.Name="{DynamicResource TriggerLevel}"/>
+                        <TextBlock x:Name="AutoNotice" Style="{StaticResource Caption}" Foreground="{StaticResource Amber}"
+                                   TextWrapping="Wrap" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+
+        <DockPanel Grid.Row="2" Margin="1,11,1,0">
+            <TextBlock DockPanel.Dock="Right" Text="{DynamicResource MainShortcuts}" Style="{StaticResource Caption}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="RecordStatus" Foreground="#FF9AA8" FontSize="12" Margin="0,0,12,0" Visibility="Collapsed"/>
+                <TextBlock x:Name="Footer" Text="{DynamicResource EmptyFooter}" Style="{StaticResource Caption}"/>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>

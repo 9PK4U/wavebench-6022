@@ -1,0 +1,6 @@
+Hantek 6022BE FX2LP firmware v2.10 by the Hantek6022API contributors.
+https://github.com/Ho-Ro/Hantek6022API/tree/cf6a1032f1064397b98da6f297f7ba6f71b5fb78
+
+The original Intel HEX image is embedded in WaveBench 6022 and loaded into
+volatile memory on the oscilloscope. It is distributed under the upstream
+license. The corresponding source and license texts are in firmware-source.zip.

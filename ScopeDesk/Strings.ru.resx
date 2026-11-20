@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+  <data name="AppTitle" xml:space="preserve"><value>WaveBench 6022 — осциллограф Hantek 6022BE</value></data>
+  <data name="ReviewTitle" xml:space="preserve"><value>Разбор записи — WaveBench 6022</value></data>
+  <data name="DeviceSubtitle" xml:space="preserve"><value>Осциллограф Hantek 6022BE</value></data>
+  <data name="Language" xml:space="preserve"><value>Язык</value></data>
+  <data name="AutoSetup" xml:space="preserve"><value>Автонастройка</value></data>
+  <data name="AutoSetupHint" xml:space="preserve"><value>Подобрать канал, уровень триггера и развёртку по живому сигналу</value></data>
+  <data name="Ready" xml:space="preserve"><value>Готово</value></data>
+  <data name="SignalSource" xml:space="preserve"><value>Источник сигнала</value></data>
+  <data name="Demo" xml:space="preserve"><value>Деморежим</value></data>
+  <data name="Run" xml:space="preserve"><value>Запуск</value></data>
+  <data name="RunPauseHint" xml:space="preserve"><value>Пуск или пауза · пробел</value></data>
+  <data name="SaveRecent" xml:space="preserve"><value>Последние 10 с</value></data>
+  <data name="SaveRecentHint" xml:space="preserve"><value>Сохранить уже захваченные кадры</value></data>
+  <data name="Record" xml:space="preserve"><value>● Запись</value></data>
+  <data name="RecordHint" xml:space="preserve"><value>Записать оба канала в файл WaveBench 6022</value></data>
+  <data name="OpenRecording" xml:space="preserve"><value>Открыть запись</value></data>
+  <data name="CsvHint" xml:space="preserve"><value>Сохранить видимые отсчёты</value></data>
+  <data name="PngHint" xml:space="preserve"><value>Сохранить изображение графика</value></data>
+  <data name="Waveforms" xml:space="preserve"><value>Осциллограммы</value></data>
+  <data name="WaveformsHint" xml:space="preserve"><value>Осциллограммы двух каналов</value></data>
+  <data name="WaitingSamples" xml:space="preserve"><value>Ожидание отсчётов…</value></data>
+  <data name="AdcClipping" xml:space="preserve"><value>Перегрузка АЦП</value></data>
+  <data name="PeakToPeak" xml:space="preserve"><value>Размах</value></data>
+  <data name="Frequency" xml:space="preserve"><value>Частота</value></data>
+  <data name="Timebase" xml:space="preserve"><value>Развёртка</value></data>
+  <data name="TimePerDivision" xml:space="preserve"><value>Время на деление</value></data>
+  <data name="Divisions" xml:space="preserve"><value>Делений</value></data>
+  <data name="HorizontalDivisions" xml:space="preserve"><value>Горизонтальные деления</value></data>
+  <data name="HorizontalDivisionsHint" xml:space="preserve"><value>Число горизонтальных делений графика</value></data>
+  <data name="SampleRate" xml:space="preserve"><value>Частота дискретизации</value></data>
+  <data name="Tracks" xml:space="preserve"><value>Дорожки</value></data>
+  <data name="TracksHint" xml:space="preserve"><value>Показать CH1 сверху, CH2 снизу</value></data>
+  <data name="Channels" xml:space="preserve"><value>Каналы</value></data>
+  <data name="FirstChannelHint" xml:space="preserve"><value>Показать канал CH1</value></data>
+  <data name="SecondChannelHint" xml:space="preserve"><value>Показать канал CH2</value></data>
+  <data name="FirstScale" xml:space="preserve"><value>Масштаб CH1</value></data>
+  <data name="SecondScale" xml:space="preserve"><value>Масштаб CH2</value></data>
+  <data name="FirstProbe" xml:space="preserve"><value>Щуп CH1</value></data>
+  <data name="SecondProbe" xml:space="preserve"><value>Щуп CH2</value></data>
+  <data name="Trigger" xml:space="preserve"><value>Триггер</value></data>
+  <data name="TriggerEdge" xml:space="preserve"><value>Условие триггера</value></data>
+  <data name="Rising" xml:space="preserve"><value>Нарастание</value></data>
+  <data name="Falling" xml:space="preserve"><value>Спад</value></data>
+  <data name="Off" xml:space="preserve"><value>Выключен</value></data>
+  <data name="TriggerChannel" xml:space="preserve"><value>Канал триггера</value></data>
+  <data name="Level" xml:space="preserve"><value>Уровень</value></data>
+  <data name="TriggerLevel" xml:space="preserve"><value>Уровень триггера</value></data>
+  <data name="MainShortcuts" xml:space="preserve"><value>Пробел · пуск / пауза     Колесо · развёртка</value></data>
+  <data name="EmptyFooter" xml:space="preserve"><value>Два канала · 8 бит · DC</value></data>
+  <data name="Search" xml:space="preserve"><value>Поиск</value></data>
+  <data name="PreviousFrameHint" xml:space="preserve"><value>Предыдущий кадр · стрелка влево</value></data>
+  <data name="PreviousFrame" xml:space="preserve"><value>Предыдущий кадр</value></data>
+  <data name="Play" xml:space="preserve"><value>▶ Воспроизвести</value></data>
+  <data name="PlaybackHint" xml:space="preserve"><value>Воспроизведение или пауза · пробел</value></data>
+  <data name="NextFrameHint" xml:space="preserve"><value>Следующий кадр · стрелка вправо</value></data>
+  <data name="NextFrame" xml:space="preserve"><value>Следующий кадр</value></data>
+  <data name="RecordingReview" xml:space="preserve"><value>Разбор записи</value></data>
+  <data name="FitTimeline" xml:space="preserve"><value>Вся запись</value></data>
+  <data name="FitTimelineHint" xml:space="preserve"><value>Вернуть полную длительность временной шкалы</value></data>
+  <data name="Timeline" xml:space="preserve"><value>Шкала записи</value></data>
+  <data name="TimelineHint" xml:space="preserve"><value>Нажмите или протяните по шкале, чтобы выбрать время. Колесо приближает шкалу. Высота полос показывает размах каждого канала.</value></data>
+  <data name="FitFrame" xml:space="preserve"><value>Весь кадр</value></data>
+  <data name="CsvView" xml:space="preserve"><value>CSV окна</value></data>
+  <data name="ReviewPlotHint" xml:space="preserve"><value>Колесо · приближение. Средняя кнопка с перетаскиванием · прокрутка. Левая и правая кнопки · курсоры A и B.</value></data>
+  <data name="ReviewShortcuts" xml:space="preserve"><value>Колесо · масштаб     СКМ · сдвиг     ЛКМ / ПКМ · курсоры A / B</value></data>
+  <data name="Reset" xml:space="preserve"><value>Сбросить</value></data>
+  <data name="Cursors" xml:space="preserve"><value>Курсоры A и B</value></data>
+  <data name="ChannelMeasurements" xml:space="preserve"><value>Измерения по каналам</value></data>
+  <data name="SearchRecording" xml:space="preserve"><value>Поиск по записи</value></data>
+  <data name="SearchCondition" xml:space="preserve"><value>Условие поиска</value></data>
+  <data name="AboveThreshold" xml:space="preserve"><value>Выше уровня</value></data>
+  <data name="ShortPulse" xml:space="preserve"><value>Импульс короче</value></data>
+  <data name="SearchChannel" xml:space="preserve"><value>Канал поиска</value></data>
+  <data name="LevelVolts" xml:space="preserve"><value>Уровень, В</value></data>
+  <data name="ThresholdVolts" xml:space="preserve"><value>Порог, вольт</value></data>
+  <data name="WidthMicroseconds" xml:space="preserve"><value>Ширина меньше, мкс</value></data>
+  <data name="WidthA11y" xml:space="preserve"><value>Ширина, микросекунд</value></data>
+  <data name="Find" xml:space="preserve"><value>Найти</value></data>
+  <data name="SearchResults" xml:space="preserve"><value>Найденные события</value></data>
+  <data name="VisibleWindow" xml:space="preserve"><value>Окно</value></data>
+  <data name="VisibleWindowHint" xml:space="preserve"><value>Видимый участок осциллограммы</value></data>
+  <data name="FiveSeconds" xml:space="preserve"><value>5 с</value></data>
+  <data name="FiveSecondsHint" xml:space="preserve"><value>Доступные отсчёты за последние 5 секунд</value></data>
+  <data name="Connecting" xml:space="preserve"><value>Подключение…</value></data>
+  <data name="UsbConnected" xml:space="preserve"><value>USB подключён</value></data>
+  <data name="UsbError" xml:space="preserve"><value>Ошибка USB</value></data>
+  <data name="Pause" xml:space="preserve"><value>Пауза</value></data>
+  <data name="CapturePaused" xml:space="preserve"><value>Захват приостановлен</value></data>
+  <data name="AutoNoSignal" xml:space="preserve"><value>Подключите сигнал или увеличьте чувствительность канала.</value></data>
+  <data name="AutoNoFrequency" xml:space="preserve"><value>Уровень подобран. Для развёртки нужен повторяющийся сигнал.</value></data>
+  <data name="LiveRecordCount" xml:space="preserve"><value>● {0:hh\:mm\:ss}  ·  {1:N0} кадров</value></data>
+  <data name="DroppedFrames" xml:space="preserve"><value>  ·  пропущено {0:N0}</value></data>
+  <data name="PerDivision" xml:space="preserve"><value>{0}/дел</value></data>
+  <data name="TriggerOff" xml:space="preserve"><value>Выкл.</value></data>
+  <data name="Locked" xml:space="preserve"><value>Захват</value></data>
+  <data name="Auto" xml:space="preserve"><value>Авто</value></data>
+  <data name="ShowChannel" xml:space="preserve"><value>Включите канал для отображения</value></data>
+  <data name="CaptureFooter" xml:space="preserve"><value>{0} / канал   ·   {1:N0} отсчётов   ·   8 бит   ·   DC</value></data>
+  <data name="Resume" xml:space="preserve"><value>Продолжить</value></data>
+  <data name="StopRecord" xml:space="preserve"><value>■ Стоп записи</value></data>
+  <data name="Saving" xml:space="preserve"><value>Сохранение…</value></data>
+  <data name="SaveWaveform" xml:space="preserve"><value>Сохранить осциллограмму в {0}</value></data>
+  <data name="RecordingFilter" xml:space="preserve"><value>Запись WaveBench 6022 (*.scopedesk)|*.scopedesk</value></data>
+  <data name="SaveRecentTitle" xml:space="preserve"><value>Сохранить последние 10 секунд</value></data>
+  <data name="SaveRecordingTitle" xml:space="preserve"><value>Сохранить запись WaveBench 6022</value></data>
+  <data name="SavingRecording" xml:space="preserve"><value>Сохранение записи…</value></data>
+  <data name="OpenRecordingError" xml:space="preserve"><value>Ошибка открытия записи</value></data>
+  <data name="CsvFilter" xml:space="preserve"><value>Таблица CSV (*.csv)|*.csv</value></data>
+  <data name="PngFilter" xml:space="preserve"><value>Изображение PNG (*.png)|*.png</value></data>
+  <data name="SaveError" xml:space="preserve"><value>Ошибка сохранения</value></data>
+  <data name="IncompleteFrame" xml:space="preserve"><value>   ·   Последний кадр неполный</value></data>
+  <data name="FramePosition" xml:space="preserve"><value>   ·   Кадр {0:N0} из {1:N0}</value></data>
+  <data name="CaptureGap" xml:space="preserve"><value>Промежуток между захватами</value></data>
+  <data name="ReadFrameError" xml:space="preserve"><value>Ошибка чтения кадра</value></data>
+  <data name="PausePlayback" xml:space="preserve"><value>Ⅱ Пауза</value></data>
+  <data name="InvalidVolts" xml:space="preserve"><value>Введите уровень в вольтах.</value></data>
+  <data name="InvalidWidth" xml:space="preserve"><value>Введите ширину больше нуля.</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Отменить</value></data>
+  <data name="Searching" xml:space="preserve"><value>Поиск…</value></data>
+  <data name="SearchingProgress" xml:space="preserve"><value>Поиск… {0}%</value></data>
+  <data name="FirstHits" xml:space="preserve"><value>Первые {0:N0} событий</value></data>
+  <data name="FoundHits" xml:space="preserve"><value>Найдено событий: {0:N0}</value></data>
+  <data name="SearchCanceled" xml:space="preserve"><value>Поиск отменён.</value></data>
+  <data name="PerChannel" xml:space="preserve"><value>{0} / канал</value></data>
+  <data name="FrameInfo" xml:space="preserve"><value>Начало кадра {0}   ·   {1:N0} отсчётов</value></data>
+  <data name="HiddenChannel" xml:space="preserve"><value>CH{0} скрыт</value></data>
+  <data name="ClippingShort" xml:space="preserve"><value>   ·   Перегрузка</value></data>
+  <data name="ZeroTime" xml:space="preserve"><value>0 с</value></data>
+  <data name="SaveRegionCsv" xml:space="preserve"><value>Сохранить участок в CSV</value></data>
+  <data name="MegaSamples" xml:space="preserve"><value>{0:g} Мвыб/с</value></data>
+  <data name="KiloSamples" xml:space="preserve"><value>{0:g} квыб/с</value></data>
+  <data name="MilliVolts" xml:space="preserve"><value>{0:0.##} мВ</value></data>
+  <data name="Volts" xml:space="preserve"><value>{0:0.###} В</value></data>
+  <data name="Microseconds" xml:space="preserve"><value>{0:0.##} мкс</value></data>
+  <data name="Milliseconds" xml:space="preserve"><value>{0:0.##} мс</value></data>
+  <data name="Seconds" xml:space="preserve"><value>{0:0.##} с</value></data>
+  <data name="Megahertz" xml:space="preserve"><value>{0:0.###} МГц</value></data>
+  <data name="Kilohertz" xml:space="preserve"><value>{0:0.###} кГц</value></data>
+  <data name="Hertz" xml:space="preserve"><value>{0:0.##} Гц</value></data>
+  <data name="MissingScope" xml:space="preserve"><value>Hantek 6022BE не найден. Проверьте USB-кабель и драйвер WinUSB.</value></data>
+  <data name="DriverAfterFirmware" xml:space="preserve"><value>Установите WinUSB для устройства 04B5:6022 и повторите подключение.</value></data>
+  <data name="FirmwareDidNotStart" xml:space="preserve"><value>Осциллограф не появился после загрузки прошивки. {0}</value></data>
+  <data name="OtherFirmware" xml:space="preserve"><value>Обнаружена другая прошивка. Закройте другие программы осциллографа и переподключите USB.</value></data>
+  <data name="BadFirmwareHex" xml:space="preserve"><value>Неверный формат HEX прошивки.</value></data>
+  <data name="BadFirmwareChecksum" xml:space="preserve"><value>Ошибка контрольной суммы прошивки.</value></data>
+  <data name="FirmwareOutOfRam" xml:space="preserve"><value>Запись прошивки выходит за пределы RAM.</value></data>
+  <data name="FirmwareIncomplete" xml:space="preserve"><value>Неполный файл прошивки.</value></data>
+  <data name="OpenUsb" xml:space="preserve"><value>Открытие устройства</value></data>
+  <data name="InitWinUsb" xml:space="preserve"><value>Подключение WinUSB</value></data>
+  <data name="UsbDescriptor" xml:space="preserve"><value>Дескриптор USB</value></data>
+  <data name="UsbInterface" xml:space="preserve"><value>Выбор USB-интерфейса</value></data>
+  <data name="UsbFlush" xml:space="preserve"><value>Очистка USB-буфера</value></data>
+  <data name="UsbCommand" xml:space="preserve"><value>Команда USB 0x{0:X2}</value></data>
+  <data name="UsbShortCommand" xml:space="preserve"><value>Неполная команда USB 0x{0:X2} ({1}/{2})</value></data>
+  <data name="UsbTimeout" xml:space="preserve"><value>Таймаут USB</value></data>
+  <data name="UsbRead" xml:space="preserve"><value>Чтение отсчётов USB</value></data>
+  <data name="UsbEmptyPacket" xml:space="preserve"><value>Осциллограф вернул пустой пакет USB.</value></data>
+  <data name="BadRecording" xml:space="preserve"><value>Файл записи WaveBench 6022 не распознан.</value></data>
+  <data name="BadRecordingDate" xml:space="preserve"><value>Неверная дата файла записи.</value></data>
+  <data name="BadFrameData" xml:space="preserve"><value>Некорректные данные кадра {0}.</value></data>
+  <data name="EmptyRecording" xml:space="preserve"><value>В этой записи нет полных кадров.</value></data>
+</root>

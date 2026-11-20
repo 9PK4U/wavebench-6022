@@ -1,0 +1,25 @@
+<UserControl x:Class="ScopeDesk.ExtremaTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Focusable="False" IsTabStop="False">
+    <Grid TextBlock.FontSize="12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="48"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17"/>
+            <RowDefinition Height="17"/>
+            <RowDefinition Height="17"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Text="Min" Style="{StaticResource Caption}"/>
+        <TextBlock Grid.Column="2" Text="Max" Style="{StaticResource Caption}"/>
+        <TextBlock Grid.Row="1" Text="{DynamicResource VisibleWindow}" Style="{StaticResource Caption}" ToolTip="{DynamicResource VisibleWindowHint}"/>
+        <TextBlock Grid.Row="2" Text="{DynamicResource FiveSeconds}" Style="{StaticResource Caption}" ToolTip="{DynamicResource FiveSecondsHint}"/>
+        <TextBlock x:Name="WindowMin" Grid.Row="1" Grid.Column="1" Text="—" FontFamily="Consolas" TextTrimming="CharacterEllipsis"/>
+        <TextBlock x:Name="WindowMax" Grid.Row="1" Grid.Column="2" Text="—" FontFamily="Consolas" TextTrimming="CharacterEllipsis"/>
+        <TextBlock x:Name="HistoryMin" Grid.Row="2" Grid.Column="1" Text="—" FontFamily="Consolas" TextTrimming="CharacterEllipsis"/>
+        <TextBlock x:Name="HistoryMax" Grid.Row="2" Grid.Column="2" Text="—" FontFamily="Consolas" TextTrimming="CharacterEllipsis"/>
+    </Grid>
+</UserControl>
