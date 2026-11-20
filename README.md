@@ -2,8 +2,6 @@
 
 **A Windows oscilloscope app for the Hantek 6022BE.** Capture both channels over USB, save an event you just saw, and inspect it later with measurements, cursors, and search.
 
-> This is a **vibe-coded** project built with OpenAI Codex and iterated against a real Hantek 6022BE.
-
 [Download the latest Windows x64 release](https://github.com/9PK4U/wavebench-6022/releases/latest)
 
 ![WaveBench 6022 in English demo mode, with CH1 and CH2 on separate tracks](docs/wavebench-demo.png)
